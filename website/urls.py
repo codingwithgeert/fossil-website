@@ -16,9 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from shop import views
+from django.conf.urls.static import static, serve
+from .settings import MEDIA_ROOT
+from django.conf import settings
+
 
 urlpatterns = [
     #/admin
     path('admin/', admin.site.urls),
-    path('',views.index,name='index' )
+    path('',views.index,name='index' ),
+    path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT }),
 ]
