@@ -23,6 +23,59 @@
   </a>
 </div>
 <!-- end col -->
-{% for product in product_objects %} 
-{{ product.title }} {% endfor %} 
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="container py-2">
+
+        <!-- Header and intro -->
+        <div class="row">
+          <header id="home-header" class="col-12 text-center">
+            <h1>The Fossils Shop</h1>
+            <h2>Treasures from all over the world.</h2>
+            <hr>
+            <!-- icon box pictures -->
+            <div class="icon-box-wrapper">
+              <div class="icon-box">
+                <i class="im im-trophy"></i>
+                <p>The Best Quality</p>
+              </div>
+              <div class="icon-box">
+                <i class="im im-globe"></i>
+                <p>Shipping Worldwide</p>
+              </div>
+            </div>
+            <div class="icon-box-wrapper">
+              <div class="icon-box">
+                <i class="im im-timer"></i>
+                <p>Fast Delivery</p>
+              </div>
+            </div>
+          </header>
+        </div>
+
+<div class="container">
+    <div class="row">
+        {% for product in product_objects %}
+        <div class="col col-sm-4">
+            <div class="card" style="width: 10rem;">
+                <img src="{{MEDIA_URL}}{{product.image}}" class="card-img-top" alt="{{product.name}}">
+                <div class="card-body">
+                    <h3>{{product.title}}</h3>
+                    <p>€{{product.price}}</p>
+                </div>
+                <form method="post" action="#">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">Add</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock %}
