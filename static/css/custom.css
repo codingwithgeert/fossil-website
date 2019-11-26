@@ -4,6 +4,16 @@ body {
     height: 100%;
 }
 
+.page-link {
+    /* position: relative; */
+    /* display: block; */
+    /* padding: 0.5rem .75rem; */
+    margin-left: 57px;
+    /* line-height: 1.25; */
+    /* color: #007bff; */
+    /* background-color: #fff; */
+    /* border: 1px solid #dee2e6; */
+}
 
 .header-bar {
     background-color: #682e23 !important;
@@ -12,19 +22,19 @@ body {
 
 
 
-.navbar-light .navbar-nav .active>.nav-link{
-    color: #632d19; 
-    
+.navbar-light .navbar-nav .active>.nav-link {
+    color: #632d19;
+
 }
 
 .navbar-light .navbar-nav .nav-link {
     color: #632d19;
 }
 
-.card{
-     width: 250px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
+.card {
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
 }
 
 h1 {
@@ -38,19 +48,19 @@ h2 {
     font-size: 2rem;
 }
 
-.search-card{
+.search-card {
     width: 19rem;
     margin-left: -4.8rem;
 }
 
 
-.card-text{
-    color:green;
+.card-text {
+    color: green;
     font-weight: 700;
 }
 
-.card-title h3{
-    font-size:1rem;
+.card-title h3 {
+    font-size: 1rem;
     font-weight: 750;
 }
 
@@ -74,7 +84,12 @@ h2 {
 .card {
     width: 13rem;
     margin-bottom: 2rem;
-    margin-left: 4rem;
+    margin-left: 5rem;
+}
+
+.search-bar {
+    width: 100%;
+    margin-left: 0;
 }
 
 .pt-4 {
@@ -82,7 +97,9 @@ h2 {
     background-color: #E2D0BE;
 }
 
-.im-trophy:before, .im-globe:before, .im-timer:before {
+.im-trophy:before,
+.im-globe:before,
+.im-timer:before {
     color: #E1B07E;
-    
+
 }
