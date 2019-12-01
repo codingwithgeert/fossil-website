@@ -8,3 +8,11 @@ class Products(models.Model):
     category = models.CharField(max_length=250)
     description = models.TextField()
     image = models.ImageField(upload_to='images')
+    
+    class Meta:
+        ordering = ('title',)
+        verbose_name = 'product'
+        verbose_name_plural = 'products'
+        
+    def __str__(self):
+        return '{}' .format(self.title)
