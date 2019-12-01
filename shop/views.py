@@ -19,6 +19,6 @@ def index(request):
     return render(request,'shop/index.html',{'product_objects':product_objects})
  
  
-def detail(request,id):
+def detailpage(request,id):
     product_object = Products.objects.get(id=id)
     return render(request,'shop/details.html',{'product_object':product_object})
