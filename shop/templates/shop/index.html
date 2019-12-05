@@ -45,7 +45,7 @@
             <input type="search" name='item_name' placeholder="Search for products" class="form-control form-control-borderless">
           </div>
           <div class="col-auto">
-            <button class="btn btn-success" type="submit">Search</button>
+            <button class="btn btn-dark" type="submit"><i class="im im-magnifier"></i></button>
           </div>
         </div>
       </form>
@@ -59,19 +59,18 @@
         <img src="{{MEDIA_URL}}{{product.image}}" class="card-img-top" alt="{{product.name}}">
         <div class="card-body">
           <div class="card-title">
-            <h3>{{product.title}}</h3>
+            <a href="/{{product.id}}"<h3>{{product.title}}</h3></a>
           </div>
           <div class="card-text">
             <p>€{{product.price}}</p>
           </div>
-          <button type="button" class="btn btn-info">More detail</button>
         </div>
         <form method="post" action="#">
           {% csrf_token %}
           <div class="input-group">
             <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
             <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
+                            <button class="btn btn-warning" type="submit"></i> Add to cart</button>
                         </span>
           </div>
         </form>
