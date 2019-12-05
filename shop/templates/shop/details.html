@@ -1,37 +1,4 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="row">
-                <div class="col-md-12">
-                    <img src="{{MEDIA_URL}}{{product_object.image}}" alt="">
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-6">
-            <div class="row">
-                <div class="col-md-12">
-                    <p>Title: {{ product_object.title }}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    €{{ product_object.price }}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    €{{ product_object.discount_price }}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    {{ product_object.description }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 {% endblock %}
