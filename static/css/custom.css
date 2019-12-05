@@ -27,6 +27,9 @@ body {
 .navbar-light .navbar-nav .nav-link {
     color: #632d19;
 }
+.btn-dark, .btn-info, .btn-warning{
+    border-color: #795548;
+}
 
 .card {
     width: 250px;
