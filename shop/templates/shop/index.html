@@ -59,7 +59,7 @@
         <img src="{{MEDIA_URL}}{{product.image}}" class="card-img-top" alt="{{product.name}}">
         <div class="card-body">
           <div class="card-title">
-            <a href="/{{product.id}}"<h3>{{product.title}}</h3></a>
+            <a href="/{{product.id}}" <h3>{{product.title}}</h3></a>
           </div>
           <div class="card-text">
             <p>€{{product.price}}</p>
@@ -70,40 +70,54 @@
           <div class="input-group">
             <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
             <span class="input-group-btn">
-                            <button class="btn btn-warning" type="submit"></i> Add to cart</button>
-                        </span>
+              <button class="btn active btn-warning" type="submit"></i> Add to cart</button>
+            </span>
           </div>
         </form>
       </div>
     </div>
     {% endfor %}
-        </div>
- 
- <nav aria-label="Page navigation">
-        <div class="row">
-            <div class="col-md-6 offset-md-6">
-                <ul class="pagination">
-                    {% if product_objects.has_previous %}
-                    
-                        <li class="page-item">
-                            <a class="page-link" href="?page={{ product_objects.previous_page_number  }}">Previous</a>
-                        </li>
-                    {% endif %}
- 
- 
-                    <li class="page-item active">
-                        <a class="page-link" href="?page={{ product_objects.number  }}">Current</a>
-                    </li>
- 
-                    {% if product_objects.has_next %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ product_objects.next_page_number  }}">Next</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </div>
-        </nav>
- 
+  </div>
+
+  <nav aria-label="Page navigation">
+    <div class="row">
+      <div class="col-md-6 offset-md-6">
+        <ul class="pagination">
+          {% if product_objects.has_previous %}
+
+          <li class="page-item">
+            <a class="page-link" href="?page={{ product_objects.previous_page_number  }}">Previous</a>
+          </li>
+          {% endif %}
+
+
+          <li class="page-item active">
+            <a class="page-link" href="?page={{ product_objects.number  }}">Current</a>
+          </li>
+
+          {% if product_objects.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ product_objects.next_page_number  }}">Next</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
     </div>
-  {% endblock %}
+  </nav>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  if (localStorage.getItem('cart') == null) {
+    var shoppingcart = {};
+  }
+  else {
+    shoppingcart = JSON.parse(localStorage.getItem('cart'));
+  }
+
+  $(document).on('click', '.active', function() {
+    console.log("The button code is working");
+  });
+</script>
+{% endblock %}
