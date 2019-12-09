@@ -31,13 +31,14 @@ ALLOWED_HOSTS = ['f106fb37b2244acfa93eddc9bde2f2d7.vfs.cloud9.us-east-1.amazonaw
 # Application definition
 
 INSTALLED_APPS = [
-    'shop',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'shop',
+    'django_forms_bootstrap',
 ]
 
 MIDDLEWARE = [
