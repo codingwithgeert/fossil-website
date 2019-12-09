@@ -65,12 +65,9 @@
             <p>€{{product.price}}</p>
           </div>
         </div>
-        <form method="post" action="#">
-          {% csrf_token %}
           <div class="input-group">
-            <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
             <span class="input-group-btn">
-              <button class="btn active btn-warning" type="submit"></i> Add to cart</button>
+              <button id="{{product.id}}" class="btn active-btn btn-warning" type="submit"></i> Add to cart</button>
             </span>
           </div>
         </form>
@@ -116,8 +113,21 @@
     shoppingcart = JSON.parse(localStorage.getItem('cart'));
   }
 
-  $(document).on('click', '.active', function() {
+  $(document).on('click', '.active-btn', function() {
     console.log("The button code is working");
-  });
+    var product_id = this.id.toString();
+    console.log(product_id);
+    
+    if(shoppingcart[1]!=undefined){
+      shoppingcart[product_id] = shoppingcart[product_id] + 1;
+    }
+    else{
+      shoppingcart[product_id] =1;
+    }
+    console.log(shoppingcart);
+    localStorage.setItem('shoppingcart',JSON.stringify(shoppingcart));
+    document.getElementById("shoppingcart").innerHTML = "Cart(" + Object.keys(shoppingcart).length +")";
+  
+});
 </script>
 {% endblock %}
