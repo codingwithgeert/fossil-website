@@ -29,6 +29,7 @@ body {
 }
 .btn-dark, .btn-info, .btn-warning{
     border-color: #795548;
+    margin-left: 1.7rem;
 }
 
 .card {
@@ -94,6 +95,7 @@ h2 {
 
 .pt-4 {
     width: 100%;
+    height: 22rem;
     background-color: #E2D0BE;
 }
 
@@ -102,4 +104,11 @@ h2 {
 .im-timer:before {
     color: #E1B07E;
 
+}
+.navbar-toggler {
+    margin-left: 9rem;
+}
+
+#carouselExampleControls{
+    display:none;
 }
