@@ -26,5 +26,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name='index' ),
     path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT }),
-    path('<int:id>/',views.detailpage,name='detail',),
+    path('<int:id>/',views.detail_page,name='detail',),
 ]
