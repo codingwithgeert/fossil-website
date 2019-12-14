@@ -1,5 +1,9 @@
-{% extends "base.html" %} {% block content %}
-{% block title %} Home {% endblock %}
+{% extends "base.html" %} 
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
 <!-- Carousel -->
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
@@ -57,7 +61,7 @@
     {% for product in product_objects %}
     <div class="col col-sm-4">
       <div class="card" style="width: 10rem;">
-        <img src="{{MEDIA_URL}}{{product.image}}" class="card-img-top" alt="{{product.name}}">
+        <img src="{{MEDIA_URL}}{{product.image}}" class="card-img-top" alt="{{product.title}}">
         <div class="card-body">
           <div class="card-title">
             <a href="/{{product.id}}" <h3>{{product.title}}</h3></a>
