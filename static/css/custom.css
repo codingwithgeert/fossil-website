@@ -8,7 +8,7 @@ body {
     margin-left: 57px;
 }
 
-.pagination{
+.pagination {
     padding-left: 4rem;
 }
 
@@ -27,7 +27,10 @@ body {
 .navbar-light .navbar-nav .nav-link {
     color: #632d19;
 }
-.btn-dark, .btn-info, .btn-warning{
+
+.btn-dark,
+.btn-info,
+.btn-warning {
     border-color: #795548;
     margin-left: 1.7rem;
 }
@@ -105,10 +108,41 @@ h2 {
     color: #E1B07E;
 
 }
+
 .navbar-toggler {
     margin-left: 9rem;
 }
 
-#carouselExampleControls{
-    display:none;
+#carouselExampleControls {
+    display: none;
+}
+
+.product_title {
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-left: 3rem;
+}
+
+.product_text {
+    text-align: center;
+    padding-right: 20px;
+    margin-left: 4rem;
+}
+
+.product_description {
+    text-align: center;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    margin-left: 4rem;
+}
+
+.text-price {
+    text-align: center;
+    margin-left: 1.5rem;
+    font-size: 1rem;
 }
