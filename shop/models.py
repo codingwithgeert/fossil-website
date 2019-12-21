@@ -9,6 +9,11 @@ class Category(models.Model):
     
     def __str__(self):
         return '{}' .format(self.title)
+        
+    class Meta:
+        ordering = ('title',)
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
 
 class Products(models.Model):
     title = models.CharField(max_length=250, unique=True)
