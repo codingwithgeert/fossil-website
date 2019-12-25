@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from shop import views as shop_views
 from cart import views as cart_views
+from cart import urls as urls_cart
 from django.conf.urls.static import static, serve
 from .settings import MEDIA_ROOT
 from django.conf import settings
@@ -29,6 +30,7 @@ urlpatterns = [
     path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT }),
     path('category/<slug:category_slug>', shop_views.home, name='products_by_category'),
     path('<int:id>/',shop_views.detailPage,name='detail',),
+    path('cart/', include(urls_cart)),
     
 ]
 
