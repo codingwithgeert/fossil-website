@@ -7,14 +7,14 @@ class Category(models.Model):
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='category', blank=True)
     
-    def __str__(self):
-        return '{}' .format(self.title)
-        
     class Meta:
         ordering = ('title',)
         verbose_name = 'category'
         verbose_name_plural = 'categories'
-
+        
+    def __str__(self):
+        return '{}' .format(self.title)
+        
 class Products(models.Model):
     title = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=250, unique=True)
@@ -24,13 +24,10 @@ class Products(models.Model):
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='images', blank=True)
     
-    
-    def __str__(self):
-        return '{}' .format(self.title)    
-    
     class Meta:
         ordering = ('title',)
         verbose_name = 'product'
         verbose_name_plural = 'products'
-        
     
+    def __str__(self):
+        return '{}' .format(self.title)    
