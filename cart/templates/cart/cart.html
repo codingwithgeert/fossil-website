@@ -13,7 +13,7 @@
 </div>
 <div class="row mx-auto">
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
-        <table class="table">
+        <table class="table table_style">
             <thead class="cart_thead">
           <tr>
             <th colspan="4">
@@ -36,16 +36,16 @@
             <td> Total:
             </td>
             <td>
-                 &nbsp;<a href=""><i class="fas fa-plus-circle"></i></a>
-                  &nbsp;<a href=""><i class="fas fa-minus-circle"></i></a>
-                   &nbsp;<a href=""><i class="fas fa-trash-alt"></i></a>
+                 &nbsp;<a href=""><i class="fas fa-plus-circle cart_icon"></i></a>
+                  &nbsp;<a href=""><i class="fas fa-minus-circle cart_icon"></i></a>
+                   &nbsp;<a href=""><i class="fas fa-trash-alt cart_icon"></i></a>
             </td>
         </tr>
         {% endfor %}
         </table>
     </div>
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
-        <table class="table">
+        <table class="table table_style">
             <thead class="cart_thead">
           <tr>
             <th colspan="4">
@@ -53,7 +53,26 @@
             </th>
           </tr>
         </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Please review your cart items before proceeding with the payment.
+                </td>
+            </tr>
+            <tr>
+                <td class ="text-left">
+                    Your total is: <strong>€</strong>
+                </td>
+            </tr>
+        </tbody>
         </table>
+        <div class="mx-auto">
+            <a href=""style="text-decoration: none">
+                <button type="button" class="btn btn-lg btn-block bg-dark text-white">
+                    Continue Shopping
+                </button>
+            </a>
+        </div>
     </div>
 </div>
 {% endblock %}
