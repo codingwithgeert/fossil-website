@@ -12,6 +12,5 @@ urlpatterns = [
     path('',shop_views.index,name='index' ),
     path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT }),
     path('<int:id>/',shop_views.detailPage,name='detail',),
-    path('cart/add/<int:product_id>', cart_views.add_cart, name='add_cart'),
   
 ]
