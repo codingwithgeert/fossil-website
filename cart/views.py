@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
-from shop.models import Products, Cart, CartItem
+from django.shortcuts import render, redirect, reverse
+from shop.models import Products, Cart, CartItem 
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 def view_cart(request):
@@ -23,7 +24,7 @@ def add_cart(request, product_id):
         cart.save()
     try:
         cart_item = CartItem.objects.get(product=product, cart=cart)
-        if cart_item.quantity < cart_item.product.stock:
+        if cart_item.quantity < cart_item.quantity:
             cart_item.quantity += 1
         cart_item.save()
     except CartItem.DoesNotExist:
@@ -35,6 +36,17 @@ def add_cart(request, product_id):
         cart_item.save()
 
     return redirect('cart_detail')
+    
+def cart_detail(request, total=0, counter=0, cart_items=None):
+    try:
+        cart = Cart.objects.get(cart_id=_cart_id(request))
+        cart_items = CartItem.objects.filter(cart=cart, active=True)
+        for cart_item in cart_items:
+            total += (cart_item.product.price * cart_item.quantity)
+            counter += cart_item.quantity
+    except ObjectDoesNotExist:
+        pass
+    return render(request, 'cart/cart.html', dict(cart_items = cart_items, total = total, counter= counter))
 
 
         
