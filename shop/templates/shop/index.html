@@ -72,7 +72,10 @@
         </div>
           <div class="input-group">
             <span class="input-group-btn">
-              <button id="{{product.id}}" class="btn active-btn btn-warning" type="submit"></i> Add to cart</button>
+              <a href="{% url 'add_cart' product.id %}">
+          <button type="button" name="button" class="btn btn-secondary">
+            Add to Cart
+          </button>
             </span>
           </div>
         </form>
