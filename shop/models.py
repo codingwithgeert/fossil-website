@@ -21,7 +21,6 @@ class Products(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     discount_price = models.FloatField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='images', blank=True)
     
