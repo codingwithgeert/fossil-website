@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'shop',
     'cart',
     'django_forms_bootstrap',
+    'stripe',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STRIPE_PUBLISHABLE_KEY = 'pk_test_ZWFXsFy79z4bdwmG9ohkueuW00ra3qBGu6'
+STRIPE_SECRET_KEY = 'sk_test_SqAgTVCYr34AFKaEW6rtIId800Ul0BpIQo'
