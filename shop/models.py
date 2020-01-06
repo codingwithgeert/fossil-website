@@ -74,7 +74,7 @@ class Order(models.Model):
     billing_country = models.CharField(max_length=250, blank=True)
     #Shipping Model
     shipping_name = models.CharField(max_length=250, blank=True)
-    shipping_adress1 = models.CharField(max_length=250, blank=True)
+    shipping_address1 = models.CharField(max_length=250, blank=True)
     shipping_city = models.CharField(max_length=250, blank=True)
     shipping_postcode = models.CharField(max_length=250, blank=True)
     shipping_country = models.CharField(max_length=250, blank=True)
