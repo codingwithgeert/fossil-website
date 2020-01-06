@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from shop.models import Products, Cart, CartItem 
+from shop.models import Products, Cart, CartItem, Order, OrderItem 
 from django.core.exceptions import ObjectDoesNotExist
 import stripe
 from django.conf import settings
@@ -50,7 +50,6 @@ def cart_detail(request, total=0, counter=0, cart_items=None):
             counter += cart_item.quantity
     except ObjectDoesNotExist:
         pass
-    
     stripe.api_key = settings.STRIPE_SECRET_KEY
     stripe_total = int(total * 100)
     description = 'the-fossil-shop - New Order'
@@ -59,19 +58,63 @@ def cart_detail(request, total=0, counter=0, cart_items=None):
         try:
             token = request.POST['stripeToken']
             email = request.POST['stripeEmail']
+            billing_name = request.POST['stripeBillingName']
+            billing_address1 = request.POST['stripeBillingAddressLine1']
+            billing_city = request.POST['stripeBillingAddressCity']
+            billing_postcode = request.POST['stripeBillingAddressZip']
+            billing_country = request.POST['stripeBillingAddressCountryCode']
+            shipping_name = request.POST['stripeShippingName']
+            shipping_address1 = request.POST['stripeShippingAddressLine1']
+            shipping_city = request.POST['stripeShippingAddressCity']
+            shipping_postcode = request.POST['stripeShippingAddressZip']
+            shipping_country = request.POST['stripeShippingAddressCountryCode']
             customer = stripe.Customer.create(
-                        email=email,
-                        source=token
-                )
+                email=email,
+                source=token
+            )
             charge = stripe.Charge.create(
-                        amount=stripe_total,
-                        currency='eur',
-                        description=description,
-                        customer=customer.id
+                amount=stripe_total,
+                currency='eur',
+                description=description,
+                customer=customer.id
+            )
+            # Creating the order
+            try:
+                order_details = Order.objects.create(
+                    token=token,
+                    total=total,
+                    email=email,
+                    billing_name=billing_name,
+                    billing_address1= billing_address1,
+                    billing_city=billing_city,
+                    billing_postcode=billing_postcode,
+                    billing_country=billing_country,
+                    shipping_name=shipping_name,
+                    shipping_address1=shipping_address1,
+                    shipping_city=shipping_city,
+                    shipping_postcode=shipping_postcode,
+                    shipping_country=shipping_country
                 )
+                order_details.save()
+                for order_item in cart_items:
+                    or_item = OrderItem.objects.create(
+                        product=order_item.product.title,
+                        quantity=order_item.quantity,
+                        price=order_item.product.price,
+                        order=order_details
+                    )
+                    or_item.save()
+
+                    # print a message when the order is created
+                    print('the order has been created')
+                return redirect('index')
+            except ObjectDoesNotExist:
+                    pass
+                    
+                
         except stripe.error.CardError as e:
-            return False,e
-            
+            return False, e
+
     return render(request, 'cart/cart.html', dict(cart_items=cart_items, total=total, counter=counter, data_key=data_key, stripe_total=stripe_total, description=description))
     
 def cart_remove(request, product_id):
