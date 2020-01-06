@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+# Category model:
 class Category(models.Model):
     title = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=250, unique=True)
@@ -14,7 +15,7 @@ class Category(models.Model):
         
     def __str__(self):
         return '{}' .format(self.title)
-        
+#Product Model:        
 class Products(models.Model):
     title = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=250, unique=True)
@@ -30,8 +31,9 @@ class Products(models.Model):
         verbose_name_plural = 'products'
     
     def __str__(self):
-        return '{}' .format(self.title)    
+        return '{}' .format(self.title)  
         
+#Cart Model:        
 class Cart(models.Model):
     cart_id = models.CharField(max_length=250, blank=True)
     date_add = models.DateField(auto_now_add=True)
@@ -42,7 +44,8 @@ class Cart(models.Model):
         
     def __str__(self):
         return '{}' .format(self.cart_id)
-
+        
+#CartItem Model:
 class CartItem(models.Model):
     product = models.ForeignKey(Products, on_delete=models.CASCADE)
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
@@ -57,3 +60,28 @@ class CartItem(models.Model):
         
     def __str__(self):
         return '{}' .format(self.product)
+        
+class Order(models.Model):
+    token = models.CharField(max_length=250, blank=True)
+    total = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='EUR Order Total')
+    email = models.EmailField(max_length=250, blank=True, verbose_name='Email Address')
+    created = models.DateTimeField(auto_now_add=True)
+    #Billing Model
+    billing_name = models.CharField(max_length=250, blank=True)
+    billing_address1 = models.CharField(max_length=250, blank=True)
+    billing_city = models.CharField(max_length=250, blank=True)
+    billing_postcode = models.CharField(max_length=250, blank=True)
+    billing_country = models.CharField(max_length=250, blank=True)
+    #Shipping Model
+    shipping_name = models.CharField(max_length=250, blank=True)
+    shipping_adress1 = models.CharField(max_length=250, blank=True)
+    shipping_city = models.CharField(max_length=250, blank=True)
+    shipping_postcode = models.CharField(max_length=250, blank=True)
+    shipping_country = models.CharField(max_length=250, blank=True)
+    
+    class Meta:
+        db_table = 'Order'
+        ordering = ['-created']
+        
+    def __str__(self):
+        return '{}' .format(self.id)
