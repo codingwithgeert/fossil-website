@@ -5,9 +5,11 @@ import stripe
 from django.conf import settings
 
 # Create your views here.
+
+#View that renders cart contents page 'cart.html'
 def view_cart(request):
     """A View that renders the cart contents page"""
-    return render(request, "cart/cart.html")
+    return render(request, "cart.html")
     
 def _cart_id(request):
     cart = request.session.session_key
@@ -15,7 +17,7 @@ def _cart_id(request):
         cart = request.session.create()
     return cart
 
-
+# Add the product to the cart
 def add_cart(request, product_id):
     product = Products.objects.get(id=product_id)
     try:
@@ -115,8 +117,9 @@ def cart_detail(request, total=0, counter=0, cart_items=None):
         except stripe.error.CardError as e:
             return False, e
 
-    return render(request, 'cart/cart.html', dict(cart_items=cart_items, total=total, counter=counter, data_key=data_key, stripe_total=stripe_total, description=description))
-    
+    return render(request, 'cart.html', dict(cart_items=cart_items, total=total, counter=counter, data_key=data_key, stripe_total=stripe_total, description=description))
+
+# Minus item from the cart
 def cart_remove(request, product_id):
     cart = Cart.objects.get(cart_id=_cart_id(request))
     product = get_object_or_404(Products, id=product_id)
@@ -127,10 +130,12 @@ def cart_remove(request, product_id):
     else:
         cart_item.delete()
     return redirect('cart_detail')
-    
+
+# Delete item from the cart
 def trashbin_product(request, product_id):
     cart = Cart.objects.get(cart_id=_cart_id(request))
     product = get_object_or_404(Products, id=product_id)
     cart_item = CartItem.objects.get(product=product, cart=cart)
     cart_item.delete()
     return redirect('cart_detail')
+    
