@@ -14,3 +14,16 @@
     text-decoration: none;
     color: #868e96 !important;
 }
+
+.stripe-button-el {
+  width: 100% !important;
+  display: block !important;
+  background-color: #868e96 !important;
+  margin-bottom: 0.3125em;
+}
+
+.stripe-button-el span {
+  height: 2.25em !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 1em !important;
+}
