@@ -1,0 +1,22 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %}Home{% endblock %}
+The Fossil Shop
+{% block content %}
+<div class="text-center">
+    <br>
+    <br>
+    <h1 class ="text-center product_title">
+        Thank you for placing your order
+    </h1>
+    <br>
+    <br>
+    <p>Your order is: <b>{{ customer_order.id }}</b></p>
+    <br>
+    <p> 
+        We have succesfully received your order and will begin processing it right away. An email
+        confirmation has been sent to you. It contains the details of the items you purchased.
+    </p>
+</div>
+{% endblock %}
