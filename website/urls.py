@@ -23,6 +23,7 @@ from .settings import MEDIA_ROOT
 from django.conf import settings
 
 
+
 urlpatterns = [
     #/admin
     path('admin/', admin.site.urls),
