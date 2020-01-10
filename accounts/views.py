@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import Group, User
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, authenticate
 from .forms import RegisterForm
+
 # Create your views here.
 
 def signupView(request):
@@ -15,4 +18,22 @@ def signupView(request):
     else:
         form = RegisterForm()
     return render(request, 'register.html', {'form': form})
+    
+def loginView(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request.POST)
+        if form.is_valid():
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(username=username, password=password)
+            if user is None:
+                login(request, user)
+                return redirect('index')
+            else:
+                return redirect('signup')
+    else:
+        form = AuthenticationForm()
+    return render(request, 'login.html', {'form': form})
+           
+            
     
