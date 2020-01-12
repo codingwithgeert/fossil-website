@@ -36,7 +36,8 @@ urlpatterns = [
     path('account/create/', accounts_views.signupView, name='signup'),
     path('account/login/', accounts_views.loginView, name='login'),
     path('account/logout', accounts_views.logoutView, name='logout'),
-    path('purchased_history/', accounts_views.purchasedHistory, name='history'),
+    path('order_history/', accounts_views.orderHistory, name='order_history'),
+    path('order/<int:order_id>', accounts_views.viewOrder, name='order_detail'),
     
 ]
 
