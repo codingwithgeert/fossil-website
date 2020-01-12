@@ -35,9 +35,8 @@ urlpatterns = [
     path('cart/', include(urls_cart)),
     path('account/create/', accounts_views.signupView, name='signup'),
     path('account/login/', accounts_views.loginView, name='login'),
-    path('account/logout', accounts_views.logoutView, name='logout')
-    
-    
+    path('account/logout', accounts_views.logoutView, name='logout'),
+    path('purchased_history/', accounts_views.purchasedHistory, name='history'),
     
 ]
 
