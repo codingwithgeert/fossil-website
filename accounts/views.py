@@ -35,6 +35,10 @@ def loginView(request):
     else:
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
+    
+def logoutView(request):
+    logout(request)
+    return redirect('login')
 
 
            
