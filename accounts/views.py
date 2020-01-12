@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.models import Group, User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
+from shop.models import Order
 from .forms import RegisterForm
 
 # Create your views here.
@@ -39,8 +41,12 @@ def loginView(request):
 def logoutView(request):
     logout(request)
     return redirect('login')
-
-
-           
-            
     
+@login_required(redirect_field_name='next', login_url='login')
+def purchasedHistory(request):
+    if request.user.is_authenticated:
+        email = str(request.user.email)
+        purchased_details = Order.objects.filter(emailAddress=email)
+        print(email)
+        print(purchased_details)
+    return render(request, 'purchased_list.html', {'purchased_details': purchased_details})
