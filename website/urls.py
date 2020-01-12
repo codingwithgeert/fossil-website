@@ -34,6 +34,9 @@ urlpatterns = [
     path('<int:id>/',shop_views.detailPage,name='detail',),
     path('cart/', include(urls_cart)),
     path('account/create/', accounts_views.signupView, name='signup'),
+    path('account/login/', accounts_views.loginView, name='login'),
+    
+    
     
 ]
 
