@@ -46,7 +46,7 @@ def logoutView(request):
 def purchasedHistory(request):
     if request.user.is_authenticated:
         email = str(request.user.email)
-        purchased_details = Order.objects.filter(emailAddress=email)
+        purchased_details = Order.objects.filter(email=email)
         print(email)
         print(purchased_details)
     return render(request, 'purchased_list.html', {'purchased_details': purchased_details})
