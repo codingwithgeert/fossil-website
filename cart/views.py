@@ -6,9 +6,10 @@ from django.conf import settings
 
 # Create your views here.
 
-#View that renders cart contents page 'cart.html'
 def view_cart(request):
-    """A View that renders the cart contents page"""
+    """
+    A View that renders the cart contents page
+    """
     return render(request, "cart.html")
     
 def _cart_id(request):
@@ -17,8 +18,11 @@ def _cart_id(request):
         cart = request.session.create()
     return cart
 
-# Add the product to the cart
+
 def add_cart(request, product_id):
+    """
+    Add items to your cart
+    """
     product = Products.objects.get(id=product_id)
     try:
         cart = Cart.objects.get(cart_id=_cart_id(request))
@@ -44,6 +48,9 @@ def add_cart(request, product_id):
 
 
 def cart_detail(request, total=0, counter=0, cart_items=None):
+    """
+    Show a page with the cart details
+    """
     try:
         cart = Cart.objects.get(cart_id=_cart_id(request))
         cart_items = CartItem.objects.filter(cart=cart, active=True)
@@ -80,7 +87,9 @@ def cart_detail(request, total=0, counter=0, cart_items=None):
                 description=description,
                 customer=customer.id
             )
-            # Creating the order
+            """
+            Saves the Order
+            """
             try:
                 order_details = Order.objects.create(
                     token=token,
@@ -119,8 +128,10 @@ def cart_detail(request, total=0, counter=0, cart_items=None):
 
     return render(request, 'cart.html', dict(cart_items=cart_items, total=total, counter=counter, data_key=data_key, stripe_total=stripe_total, description=description))
 
-# Minus item from the cart
 def cart_remove(request, product_id):
+    """
+    Minus item from the cart
+    """
     cart = Cart.objects.get(cart_id=_cart_id(request))
     product = get_object_or_404(Products, id=product_id)
     cart_item = CartItem.objects.get(product=product, cart=cart)
@@ -131,18 +142,22 @@ def cart_remove(request, product_id):
         cart_item.delete()
     return redirect('cart_detail')
 
-# Delete item from the cart
+
 def trashbin_product(request, product_id):
+    """
+    Delete item from the cart
+    """
     cart = Cart.objects.get(cart_id=_cart_id(request))
     product = get_object_or_404(Products, id=product_id)
     cart_item = CartItem.objects.get(product=product, cart=cart)
     cart_item.delete()
     return redirect('cart_detail')
     
-# Renders a your order was succesfull page for the user
-
 
 def thank_you(request, order_id):
+    """
+    Shows a page when the order was succesfull
+    """
     if order_id:
         customer_order = get_object_or_404(Order, id=order_id)
     return render(request, 'ordsuccess.html', {'customer_order': customer_order})
