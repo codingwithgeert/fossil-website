@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+Purchase History
+{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <br>
+    <h1 class="text-center product_title">
+        Purchase History
+    </h1>
+    <br>
+    {% if purchased_details %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Order Number</th>
+                <th>Order Date</th>
+                <th>Total Amount</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for purchased in purchased_details %}
+                <tr>
+                    <td><strong>{{ purchased.id }}</strong></td>
+                    <td>{{ purchased.created|date:"d M Y" }}</td>
+                    <td><strong>€</strong>{{ purchased.total }}</td>
+                    <td><a href="#">View Order</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>You have not placed any order.</p>
+    <br><br>
+    <a href="{% url 'index' %}" class="btn btn-secondary">Continue Shopping</a>
+    {% endif %}
+</div>
+<br><br>
+{% endblock %}
