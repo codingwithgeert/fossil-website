@@ -64,4 +64,17 @@ def purchasedHistory(request):
         print(email)
         print(purchased_details)
     return render(request, 'purchased_list.html', {'purchased_details': purchased_details})
+
+@login_required(redirect_field_name='next', login_url='login') 
+def viewOrder(request, order_id):
+    """
+    When the user is logged in it let them click on the link 
+    to open up the view_order.html
+    """
+    if request.user.is_authenticated:
+        email = str(request.user.email)
+        order = Order.objects.get(id=order_id, email=email)
+        order_items = OrderItem.objects.filter(order=order)
+    return render(request, 'view_order.html', {'order': order, 'order_items': order_items})
+    
     
