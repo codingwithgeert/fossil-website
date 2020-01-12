@@ -110,7 +110,7 @@ h2 {
 }
 
 .navbar-toggler {
-    margin-left: 9rem;
+    margin-left: 6rem;
 }
 
 #carouselExampleControls {
@@ -147,11 +147,37 @@ h2 {
     font-size: 1rem;
 }
 
-.errorlist li{
+.errorlist li {
     color: red;
     font-weight: bold;
 }
 
-.custom_class{
-    margin-bottom:1.25em !important;
+.custom_class {
+    margin-bottom: 1.25em !important;
+}
+
+.login {}
+
+.logout {}
+
+#shoppingcart {
+    display: none;
+}
+
+#shoppingcart2 {
+    color: #632d19;
+    margin-left: 16.8rem;
+    margin-top: -5.8rem;
+    list-style-type: none;
+    font-size: 23px;
+}
+
+.nav-item {
+    list-style-type: none;
+}
+
+.item_count {
+    margin-top: -1.5em;
+    margin-left: 1.8rem;
+    margin-bottom: 1rem;
 }
