@@ -9,6 +9,9 @@ from .forms import RegisterForm
 # Create your views here.
 
 def signupView(request):
+    """
+    Create your account by using the signup form
+    """
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
@@ -22,7 +25,11 @@ def signupView(request):
         form = RegisterForm()
     return render(request, 'register.html', {'form': form})
 
+
 def loginView(request):
+     """
+    Let the user login to the form by username and password.
+    """
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
@@ -39,14 +46,22 @@ def loginView(request):
     return render(request, 'login.html', {'form': form})
     
 def logoutView(request):
+     """
+    Let the user logout and go back to login.html
+    """
     logout(request)
     return redirect('login')
     
 @login_required(redirect_field_name='next', login_url='login')
 def purchasedHistory(request):
+     """
+    When user is logged into their account it send to the
+    purchased_list.html to view their items
+    """
     if request.user.is_authenticated:
         email = str(request.user.email)
         purchased_details = Order.objects.filter(email=email)
         print(email)
         print(purchased_details)
     return render(request, 'purchased_list.html', {'purchased_details': purchased_details})
+    
