@@ -18,6 +18,7 @@ from django.urls import path, include
 from shop import views as shop_views
 from cart import views as cart_views
 from cart import urls as urls_cart
+from accounts import urls as urls_accounts
 from accounts import views as accounts_views
 from django.conf.urls.static import static, serve
 from .settings import MEDIA_ROOT
@@ -33,10 +34,7 @@ urlpatterns = [
     path('category/<slug:category_slug>', shop_views.home, name='products_by_category'),
     path('<int:id>/',shop_views.detailPage,name='detail',),
     path('cart/', include(urls_cart)),
-    path('account/create/', accounts_views.signupView, name='signup'),
-    path('account/login/', accounts_views.loginView, name='login'),
-    path('account/logout', accounts_views.logoutView, name='logout'),
-    path('order_history/', accounts_views.orderHistory, name='order_history'),
+    path('account/', include(urls_accounts)),
     path('order/<int:order_id>', accounts_views.viewOrder, name='order_detail'),
     
 ]
