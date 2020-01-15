@@ -7,7 +7,7 @@ Order History
 {% block content %}
   <div class="text-center">
     <br>
-    <h1 class="text-center product_title">
+    <h1 class="text-center product_title" width="400">
       Order History
     </h1>
     <br>
@@ -18,7 +18,6 @@ Order History
             <th>Order Number</th>
             <th>Order Date</th>
             <th>Total Amount</th>
-            <th>Status</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -28,7 +27,6 @@ Order History
               <td>{{ order.id }}</td>
               <td>{{ order.created|date:"d M Y" }}</td>
               <td>€{{ order.total }}</td>
-              <td><i class="fas fa-check"></i>&nbsp;Complete</td>
               <td><a href="{% url 'order_detail' order.id %}">View Order</a></td>
             </tr>
           {% endfor %}
