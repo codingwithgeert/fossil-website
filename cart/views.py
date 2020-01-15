@@ -3,6 +3,8 @@ from shop.models import Products, Cart, CartItem, Order, OrderItem
 from django.core.exceptions import ObjectDoesNotExist
 import stripe
 from django.conf import settings
+from django.core.mail import EmailMessage
+from django.template.loader import get_template
 
 # Create your views here.
 
@@ -118,6 +120,12 @@ def cart_detail(request, total=0, counter=0, cart_items=None):
 
                     # print a message when the order is created
                     print('the order has been created')
+                try:
+                    sendEmail(order_details.id)
+                    print('The order email has been sent')
+                except IOError as e:
+                    return e
+                
                 return redirect('thank_you', order_details.id)
             except ObjectDoesNotExist:
                     pass
@@ -161,3 +169,22 @@ def thank_you(request, order_id):
     if order_id:
         customer_order = get_object_or_404(Order, id=order_id)
     return render(request, 'ordsuccess.html', {'customer_order': customer_order})
+    
+def sendEmail(order_id):
+    transaction = Order.objects.get(id=order_id)
+    order_items = OrderItem.objects.filter(order=transaction)
+
+    try:
+        subject = "The Fossil Store - New Order #{}".format(transaction.id)
+        to = ['{}'.format(transaction.email)]
+        from_email = "orders@geertdeveloper.online"
+        order_information = {
+            'transaction': transaction,
+            'order_items': order_items
+        }
+        message = get_template('email.html').render(order_information)
+        msg = EmailMessage(subject, message, to=to, from_email=from_email)
+        msg.content_subtype = 'html'
+        msg.send()
+    except IOError as e:
+        return e
