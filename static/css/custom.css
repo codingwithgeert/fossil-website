@@ -36,9 +36,11 @@ body {
 }
 
 .card {
-    width: 250px;
+    display:inline-block;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
+    margin-bottom: 2rem;
+    margin-left: 5rem;
 }
 
 h1 {
@@ -85,19 +87,13 @@ h2 {
     background-image: url(https://cff2.earth.com/uploads/2018/01/22182124/The-science-and-art-of-recovering-and-preparing-fossils-.jpg);
 }
 
-.card {
-    width: 13rem;
-    margin-bottom: 2rem;
-    margin-left: 5rem;
-}
-
 .search-bar {
     width: 100%;
-    margin-left: 0;
+    margin-left: 7px;
 }
 
 .pt-4 {
-    width: 100%;
+    width: 104%;
     height: 22rem;
     background-color: #E2D0BE;
 }
