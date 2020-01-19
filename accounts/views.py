@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, reverse
+from django.core.paginator import Paginator
+from shop.models import Products, Category
 from django.contrib.auth.models import Group, User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
