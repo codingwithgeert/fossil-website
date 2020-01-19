@@ -36,7 +36,7 @@ urlpatterns = [
     path('<int:id>/',shop_views.detailPage,name='detail',),
     path('cart/', include(urls_cart)),
     path('account/', include(urls_accounts)),
-    path('', include(urls_pages)),
+    path('pages/', include(urls_pages)),
     path('order/<int:order_id>', accounts_views.viewOrder, name='order_detail'),
     
 ]
