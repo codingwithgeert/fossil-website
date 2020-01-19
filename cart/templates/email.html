@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>New Order #{{ transaction.id }} - The Fossil Shop</title>
+		<!-- Style has to be in the html or it wont be rendered by email -source stackoverflow -->
+		<style>
+			table {
+				width: 60%;
+				margin: 0 auto;
+				border-collapse: collapse;
+			}
+			table tr td {
+				border: 1px solid #c1c1c1;
+			}
+			p {
+				padding-right: 50px;
+				padding-left: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<center>
+			<h1>Thanks for buying something from the store!</h1>
+			<p>This email is to confirm that you have placed an order on The Fossil Shop .<br>Please make sure that all the details are correct.</p>
+		</center>
+		<br>
+		<table>
+			<tr>
+				<td valign="top" colspan="2" style="width: 50%;">
+					<b>Bill sent to:</b><br>
+					{{ transaction.billig_name }}<br>
+					{{ transaction.billing_address1 }}<br>
+					{{ transaction.billing_city }}<br>
+					{{ transaction.billing_postcode }}<br>
+					{{ transaction.billing_country }}<br>
+				</td>
+				<td valign="top" colspan="2" style="width: 50%;">
+					<b>Order: </b>#{{ transaction.id }}<br>
+					<b>Date: </b>{{ transaction.created|date:"d M Y" }}
+				</td>
+			</tr>
+			<tr>
+				<td><b>Product Description</b></td>
+				<td><b>Qty</b></td>
+				<td><b>Unit Price</b></td>
+				<td><b>Sub-Total</b></td>
+			</tr>
+			{% for item in order_items %}
+			<tr>
+				<td>{{ item.product }}</td>
+				<td>{{ item.quantity }}</td>
+				<td>€{{ item.price }}</td>
+				<td>€{{ item.sub_total }}</td>
+			</tr>
+			{% endfor %}
+			<tr>
+				<td colspan="3" style="text-align: right;"><b>Total</b></td>
+				<td>€{{ transaction.total }}</td>
+			</tr>
+			<tr>
+				<td colspan="3" style="text-align: right;"><b>Total paid</b></td>
+				<td>€{{ transaction.total }}</td>
+			</tr>
+			<tr>
+				<td valign="top" colspan="2" style="width: 50%;">
+					<b>Ship to:</b><br>
+					{{ transaction.shippin_name }}<br>
+					{{ transaction.shipping_address1 }}<br>
+					{{ transaction.shipping_city }}<br>
+					{{ transaction.shipping_postcode }}<br>
+					{{ transaction.shipping_country }}<br>
+				</td>
+				<td valign="top" colspan="2" style="width: 50%;">
+					<b>Payment details:</b><br>
+					€{{ transaction.total }} was successfully paid via Stripe.
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
