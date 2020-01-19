@@ -1,22 +1,22 @@
 {% extends "base.html" %} 
 {% load static %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Order Succesfull{% endblock %}
 The Fossil Shop
 {% block content %}
 <div class="text-center">
     <br>
     <br>
     <h1 class ="text-center product_title">
-        Thank you for placing your order
+        Thank you for placing your order at The Fossil Shop
     </h1>
     <br>
     <br>
     <p>Your order is: <b>{{ customer_order.id }}</b></p>
     <br>
     <p> 
-        We have succesfully received your order and will begin processing it right away. An email
-        confirmation has been sent to you. It contains the details of the items you purchased.
+        We have succesfully received your order. An email with your order detail has been sent to your inbox.
+        Make sure to check the spam inbox aswell.
     </p>
 </div>
 {% endblock %}
