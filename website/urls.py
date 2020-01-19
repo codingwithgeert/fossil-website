@@ -19,6 +19,7 @@ from shop import views as shop_views
 from cart import views as cart_views
 from cart import urls as urls_cart
 from accounts import urls as urls_accounts
+from pages import urls as urls_pages
 from accounts import views as accounts_views
 from django.conf.urls.static import static, serve
 from .settings import MEDIA_ROOT
@@ -35,6 +36,7 @@ urlpatterns = [
     path('<int:id>/',shop_views.detailPage,name='detail',),
     path('cart/', include(urls_cart)),
     path('account/', include(urls_accounts)),
+    path('', include(urls_pages)),
     path('order/<int:order_id>', accounts_views.viewOrder, name='order_detail'),
     
 ]
