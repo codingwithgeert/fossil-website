@@ -1,0 +1,1 @@
+web: gunicorn Ecom-fossil.wsgi:application
