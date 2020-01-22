@@ -94,6 +94,8 @@
     <div class="mx-auto">
       <form class="" action="" method="POST">
         {% csrf_token %}
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ data_key }}" data-amount="{{ stripe_total }}" data-name="the-fossil-shop" data-description="{{ description }}" data-locale="auto" data-currency="eur" data-shipping-address="true"
+          data-billing-address="true" data-zip-code="true"></script>
       </form>
       <a href="{% url 'index' %}" style="text-decoration: none;">
             <button type="button" class="btn btn-lg btn-block bg-dark text-white">
