@@ -1,4 +1,14 @@
 {% extends 'base.html' %} {% load static %} {% block title %} Cart {% endblock %} {% block content %} {% if not cart_items %}
+{% block head_js %}
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+    //<![CDATA[
+        Stripe.publishableKey = '{{ publishable }}';
+    //]]>
+</script>
+<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+{% endblock head_js %}
+
 <div class="text-center">
   <br>
   <h1 class="text-center product_title">
@@ -84,8 +94,6 @@
     <div class="mx-auto">
       <form class="" action="" method="POST">
         {% csrf_token %}
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ data_key }}" data-amount="{{ stripe_total }}" data-name="the-fossil-shop" data-description="{{ description }}" data-locale="auto" data-currency="eur" data-shipping-address="true"
-          data-billing-address="true" data-zip-code="true"></script>
       </form>
       <a href="{% url 'index' %}" style="text-decoration: none;">
             <button type="button" class="btn btn-lg btn-block bg-dark text-white">
