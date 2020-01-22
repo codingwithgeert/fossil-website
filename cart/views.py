@@ -61,10 +61,10 @@ def cart_detail(request, total=0, counter=0, cart_items=None):
             counter += cart_item.quantity
     except ObjectDoesNotExist:
         pass
-    stripe.api_key = settings.STRIPE_SECRET_KEY
+    stripe.api_key = settings.STRIPE_SECRET
     stripe_total = int(total * 100)
     description = 'the-fossil-shop - New Order'
-    data_key = settings.STRIPE_PUBLISHABLE_KEY
+    data_key = settings.STRIPE_PUBLISHABLE
     if request.method == 'POST':
         try:
             token = request.POST['stripeToken']
