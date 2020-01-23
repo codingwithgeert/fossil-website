@@ -6,13 +6,13 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from shop.models import Order, OrderItem
-from .forms import RegisterForm
+from accounts.forms import SignUpForm
 
 # Create your views here.
 
 def signupView(request):
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
+        form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
@@ -21,7 +21,7 @@ def signupView(request):
             customer_group.user_set.add(signup_user)
             login(request, signup_user)
     else:
-        form = RegisterForm()
+        form = SignUpForm()
     return render(request, 'register.html', {'form': form})
 
 def loginView(request):
@@ -35,7 +35,7 @@ def loginView(request):
                 login(request, user)
                 return redirect('index')
             else:
-                return redirect('signup')
+                return redirect('register')
     else:
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
