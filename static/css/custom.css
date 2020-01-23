@@ -120,7 +120,7 @@ h2 {
 }
 
 .navbar-toggler {
-    margin-left: 13rem;
+    margin-left: 5rem;
 }
 
 #carouselExampleControls {
@@ -176,9 +176,12 @@ h2 {
 #shoppingcart2 {
     color: #632d19;
     margin-left: 16.8rem;
-    margin-top: -4.8rem;
+    margin-top: -5.8rem;
+    padding-right: 4px;
+    padding-left: 10px;
     list-style-type: none;
     font-size: 23px;
+    
 }
 
 .nav-item {
