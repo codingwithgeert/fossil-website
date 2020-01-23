@@ -25,7 +25,7 @@
         </a>
         {% endif %}
       </li>
-      {% if request.user.is_authenticated and request.user.first_name %}
+     {% if user.is_authenticated %}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle " data-toggle="dropdown">
           Welcome, {{ request.user.first_name }} <i class="im im-user-circle"></i>

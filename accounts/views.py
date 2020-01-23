@@ -48,8 +48,7 @@ def orderHistory(request):
     if request.user.is_authenticated:
         email = str(request.user.email)
         order_details = Order.objects.filter(email=email)
-        print(email)
-        print(order_details)
+        print(request.user)
     return render(request, 'order_list.html', {'order_details': order_details})
 
 @login_required(redirect_field_name='next', login_url='login')
