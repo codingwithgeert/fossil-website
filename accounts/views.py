@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect, reverse
 from django.core.paginator import Paginator
-from shop.models import Products, Category
+from shop.models import Products, Category, Order, OrderItem
 from django.contrib.auth.models import Group, User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-from shop.models import Order, OrderItem
 from accounts.forms import SignUpForm
 
 # Create your views here.
