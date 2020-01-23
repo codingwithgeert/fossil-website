@@ -1,8 +1,4 @@
-{% extends "base.html" %} 
-
-{% block title %}Home{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
 
 <!-- Carousel -->
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -70,19 +66,26 @@
             <p>€{{product.price}}</p>
           </div>
         </div>
-          <div class="input-group">
-            <span class="input-group-btn">
+        {% if request.user.is_authenticated and request.user.first_name %}
+        <div class="input-group">
+          <span class="input-group-btn">
               <a href="{% url 'add_cart' product.id %}">
-          <button type="button" name="button" class="btn btn-secondary cart-button">
+          <button type="button" name="button" class="btn btn-primary cart-button">
             Add to Cart
           </button>
             </span>
-          </div>
+        </div>
+        {% else %}
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Create account/login to use this button">
+        <button class="btn btn-secondary" style="pointer-events: none;" type="button" disabled>Add to Cart</button>
+        </span>
+        {% endif %}
         </form>
       </div>
     </div>
     {% endfor %}
   </div>
+
 
   <nav aria-label="Page navigation">
     <div class="row">
@@ -112,5 +115,9 @@
 
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
+<script>
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
 {% endblock %}
