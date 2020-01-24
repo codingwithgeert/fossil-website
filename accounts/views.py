@@ -49,6 +49,7 @@ def orderHistory(request):
         email = str(request.user.email)
         order_details = Order.objects.filter(email=email)
         print(request.user)
+        
     return render(request, 'order_list.html', {'order_details': order_details})
 
 @login_required(redirect_field_name='next', login_url='login')
@@ -58,3 +59,5 @@ def viewOrder(request, order_id):
         order = Order.objects.get(id=order_id, email=email)
         order_items = OrderItem.objects.filter(order=order)
     return render(request, 'view_order.html', {'order': order, 'order_items': order_items})
+
+    
