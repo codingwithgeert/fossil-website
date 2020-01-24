@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from accounts.forms import ContactUsForm 
 # Create your views here.
 def about_me(request):
     """
