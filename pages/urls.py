@@ -4,4 +4,5 @@ from pages import views as pages_views
 urlpatterns = [
     path('about/', pages_views.about_me, name='about'),
     path('faq/', pages_views.faq_page, name='faq'),
+    path('contact/',pages_views, name='contact'),
     ]
