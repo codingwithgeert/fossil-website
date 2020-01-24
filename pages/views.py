@@ -8,3 +8,7 @@ def about_me(request):
     
 def faq_page(request):
     return render(request, "faq.html")
+
+def contact(request):
+    form = ContactUsForm()
+    return render(request, "contact.html", {'form': form})
