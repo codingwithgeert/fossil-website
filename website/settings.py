@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'pages',
     'crispy_forms',
     'stripe',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
