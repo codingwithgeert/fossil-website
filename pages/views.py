@@ -27,8 +27,6 @@ def contact(request):
             to=['contact@geertdeveloper.online'], 
             from_email=from_email
             )
-            msg.send()
-            
             return render(request, "contact_send.html")
     
     else:
