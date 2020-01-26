@@ -20,3 +20,4 @@ virtualenv==16.2.0
 virtualenv-clone==0.5.3
 virtualenvwrapper==4.8.4
 whitenoise==5.0.1
+django-widget-tweaks==1.4.5
