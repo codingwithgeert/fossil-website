@@ -1,4 +1,8 @@
-{% extends "base.html" %} {% block title %} FAQ {% endblock %} {% block content %}
+{% extends "base.html" %} 
+{% block title %} 
+FAQ 
+{% endblock %} 
+{% block content %}
 <div class="text-center">
     <h1 class="text-center product_title">
         FAQ
@@ -12,32 +16,67 @@
                 <div class="card card-faq">
                     <div class="card-header text-center">
                         <a class="card-link" data-toggle="collapse" href="#collapseOne">
-               What are the payments options?
-               </a>
+                           What are the payments options?
+                       </a>
                     </div>
                     <div id="collapseOne" class="collapse" data-parent="#accordion">
                         <div class="card-body text-center">
                             You can pay by using Stripe.(Visa)
                         </div>
                     </div>
+                    <div class="card-header text-center">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                          Accepting cryptocurrency?
+                       </a>
+                    </div>
+                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                        <div class="card-body text-center">
+                            For now we don't accept this. Maybe this might change in the future.
+                        </div>
+                    </div>
                 </div>
                 <h6 class="text-center">Account:</h6>
                 <div class="card card-faq">
                     <div class="card-header text-center">
-                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-               How can I create an new account ?
-               </a>
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                          Create an new account ?
+                       </a>
                     </div>
-                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                    <div id="collapseThree" class="collapse" data-parent="#accordion">
                         <div class="card-body text-center">
-                            Lorem ipsum..
+                            Click on the sign up button in the navigationbar.
+                            If you are on your mobile you can find after clicked on the
+                            hamburger icon.
+                        </div>
+                    </div>
+                    <div class="card-header text-center">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+                           Login to my account ?
+                       </a>
+                    </div>
+                    <div id="collapseFour" class="collapse" data-parent="#accordion">
+                        <div class="card-body text-center">
+                            Click on the login button in the navigationbar.
+                            If you are on your mobile you can find after clicked on the
+                            hamburger icon.
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end col -->
-    </div>
-    <!--end container -->
+                
+                 <h6 class="text-center">Shipping:</h6>
+                <div class="card card-faq">
+                    <div class="card-header text-center">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
+                           How long does shipping takes?
+                       </a>
+                    </div>
+                    <div id="collapseFive" class="collapse" data-parent="#accordion">
+                        <div class="card-body text-center">
+                            This is different from each country you are from.
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end col -->
+    </div><!--end container -->
     {% endblock %}
