@@ -35,16 +35,17 @@ body {
     margin-left: 1.7rem;
 }
 
-.btn-contactform{
-    margin-left:0rem;
-    margin-bottom:0.5rem;
+.btn-contactform {
+    margin-left: 0rem;
+    margin-bottom: 0.5rem;
 }
 
 .card-shop {
     display: inline-block;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
-    margin-left: 85px;
+    margin-left: 67px;
+    margin-right: 4rem;
     margin-bottom: 19px;
     margin-top: 28px;
 }
@@ -212,3 +213,62 @@ something {
     background-color: #152e94;
 }
 
+/*------------------------------@media for Tablets (min-width: 768px)-----------------------------------*/
+
+@media (min-width: 768px) {
+    .navbar-light .navbar-nav .active>.nav-link {
+        font-size: 1.7rem;
+    }
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 1.7rem;
+    }
+    .navbar-light .navbar-toggler {
+        margin-left: 20rem;
+        margin-top: 1rem;
+        font-size: 3rem;
+    }
+    .page-link {
+        margin-left: 10px;
+    }
+    #shoppingcart2 {
+        margin-top: -8.8rem;
+        margin-left: 39.8rem;
+        font-size: 42px;
+    }
+    .item_count {
+        margin-left: 2.8rem;
+
+    }
+    .logo {
+        width: 13rem;
+        height: 9rem;
+    }
+    h1 {
+        font-size: 3.5rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    .card-shop {
+        width: 13rem;
+    }
+    .card-text:last-child {
+        font-size: 1.5rem;
+    }
+    .card-title {
+        font-size: 1.7rem;
+    }
+    .btn-secondary:disabled {
+        font-size: 1.5rem;
+    }
+    .form-control {
+        font-size: 2rem;
+    }
+    .search {
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
+    .page-item.active .page-link {
+        font-size: 1.5rem;
+    }
+}
