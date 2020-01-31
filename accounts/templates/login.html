@@ -20,7 +20,7 @@ Log in
         <br>
         <p>When you create an account, you can see your orders history.</p>
         <br>
-        <a href="{% url 'signup' %}" class="btn btn-secondary">Create New Account</a>
+        <a href="{% url 'signup' %}" class="btn btn-secondary buttons">Create New Account</a>
       </div>
       <div class="col-12 col-sm-12 col-md-12 col-lg-6 bg-light">
         <div>
@@ -31,7 +31,7 @@ Log in
           <form method="post">
             {% csrf_token %}
             <p>{{ form | crispy }}</p>
-            <button type="submit" name="button" class="btn btn-secondary">Sign in</button>
+            <button type="submit" name="button" class="btn btn-secondary buttons">Sign in</button>
           </form>
           <br>
         </div>
