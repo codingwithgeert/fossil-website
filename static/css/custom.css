@@ -229,6 +229,7 @@ something {
     }
     .page-link {
         margin-left: 10px;
+        font-size: 1.5rem;
     }
     #shoppingcart2 {
         margin-top: -8.8rem;
@@ -249,15 +250,33 @@ something {
     h2 {
         font-size: 2.5rem;
     }
+    h5 {
+        font-size: 1.9rem;
+    }
+    h6{
+        font-size: 1.7rem;
+    }
+    p{
+        font-size: 1.5rem;
+    }
+    .links {
+        font-size: 1.5rem;
+    }
     .card-shop {
         width: 13rem;
     }
     .card-text:last-child {
         font-size: 1.5rem;
     }
+    .card-link{
+        font-size:1.5rem;
+    }
     .card-title {
         font-size: 1.7rem;
     }
+    .card-body {
+    font-size: 1.4rem;
+}
     .btn-secondary:disabled {
         font-size: 1.5rem;
     }
@@ -270,5 +289,28 @@ something {
     }
     .page-item.active .page-link {
         font-size: 1.5rem;
+    }
+    .footer-copyright {
+        font-size: 1.5rem;
+    }
+    .fab {
+        font-size: 2.5rem;
+        margin-top: 4rem;
+    }
+    .dropdown-item {
+        font-size: 1.5rem;
+    }
+
+    .table {
+        font-size: 1.5rem;
+    }
+    .page-footer {
+        height: 31rem;
+    }
+    .product_title{
+        font-size: 2.2rem;
+    }
+    .buttons{
+        font-size:2rem;
     }
 }
