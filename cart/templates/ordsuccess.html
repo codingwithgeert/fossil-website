@@ -1,22 +1,42 @@
-{% extends "base.html" %} 
-{% load static %}
-
-{% block title %}Order Succesfull{% endblock %}
-The Fossil Shop
-{% block content %}
-<div class="text-center">
-    <br>
-    <br>
-    <h1 class ="text-center product_title">
-        Thank you for placing your order at The Fossil Shop
-    </h1>
-    <br>
-    <br>
-    <p>Your order is: <b>{{ customer_order.id }}</b></p>
-    <br>
-    <p> 
-        We have succesfully received your order. An email with your order detail has been sent to your inbox.
-        Make sure to check the spam inbox aswell.
-    </p>
+{% extends "base.html" %} {% load static %} {% block title %}Order Succesfull{% endblock %} The Fossil Shop {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="text-center">
+            <br>
+            <br>
+            <div class="col col-md-12">
+                <h1 class="text-center product_title">
+                    Thank you for placing your order at The Fossil Shop
+                </h1>
+                <br>
+                <br>
+                <p>Your order is: <b>{{ customer_order.id }}</b></p>
+                <br>
+                <p class="text-center succesfullpar ">
+                    We have succesfully received your order. An email with your order detail has been sent to your inbox. Make sure to check the spam inbox aswell.
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
+
+<div class="container">
+    <div class="row">
+        <div class="text-center">
+            <h1 class="text-center product_title">
+                About us
+            </h1>
+            <div class="col col-md-12">
+                <img src="https://images.unsplash.com/photo-1555602015-9efbc925fc5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" class="img-fluid" alt="Responsive image">
+            </div>
+            <br>
+            <h5>Who Are we?</h5>
+            <div class="col col-md-12">
+                <p>Everyone who works at our shop has fossil finding as a passion! We travel the world in search of these treasures of history. Our clients are from all over the world. Some of our fossils are even on display in musea all over</p>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+</div>
+<!-- end container -->
