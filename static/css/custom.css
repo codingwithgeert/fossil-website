@@ -2,62 +2,10 @@ body {
     background-color: white;
     margin: 0;
     height: 100%;
+    
 }
 
-.page-link {
-    margin-left: 25px;
-}
-
-.pagination {
-    padding-left: 4rem;
-}
-
-.header-bar {
-    background-color: #682e23 !important;
-    height: 6rem;
-}
-
-
-
-.navbar-light .navbar-nav .active>.nav-link {
-    color: #632d19;
-
-}
-
-.navbar-light .navbar-nav .nav-link {
-    color: #632d19;
-}
-
-
-.btn-info,
-.btn-warning {
-    border-color: #795548;
-    margin-left: 1.7rem;
-}
-
-.btn-contactform {
-    margin-left: 0rem;
-    margin-bottom: 0.5rem;
-}
-
-.card-shop {
-    display: inline-block;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
-    margin-left: 67px;
-    margin-right: 4rem;
-    margin-bottom: 19px;
-    margin-top: 28px;
-}
-
-.card-faq {
-    margin-left: auto;
-    margin-bottom: 1rem;
-}
-
-.faq-body {
-    background-color: red;
-}
+/*--------------Styling on all the pages-------------------*/
 
 h1 {
     color: brown;
@@ -70,74 +18,6 @@ h2 {
     font-size: 2rem;
 }
 
-.search-card {
-    width: 19rem;
-    margin-left: -4.8rem;
-}
-
-
-.card-text {
-    color: green;
-    font-weight: 700;
-}
-
-.card-title h3 {
-    font-size: 1rem;
-    font-weight: 750;
-}
-
-.footer {
-    background-color: #E2D0BE;
-}
-
-.footer-copyright {
-    margin: auto;
-}
-
-.home {
-    display: none;
-}
-
-.social {
-    display: none;
-}
-
-.jumbotron {
-    margin-top: 2rem;
-    background-image: url(https://cff2.earth.com/uploads/2018/01/22182124/The-science-and-art-of-recovering-and-preparing-fossils-.jpg);
-}
-
-.search-bar {
-    width: 100%;
-    margin-left: 7px;
-}
-
-.cart-button {
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.pt-4 {
-    width: 100%;
-    height: 22rem;
-    background-color: #E2D0BE;
-}
-
-.im-trophy:before,
-.im-globe:before,
-.im-timer:before {
-    color: #E1B07E;
-
-}
-
-.navbar-toggler {
-    margin-left: 5rem;
-}
-
-#carouselExampleControls {
-    display: none;
-}
-
 .product_title {
     text-align: center;
     font-size: 25px;
@@ -146,6 +26,105 @@ h2 {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
+#shoppingcart {
+    display: none;
+}
+
+/*------------------navbar.html styling--------------------*/
+
+.navbar-light .navbar-nav .active>.nav-link {
+    color: #632d19;
+
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #632d19;
+}
+
+.navbar-toggler {
+    margin-left: 5rem;
+}
+
+
+
+#shoppingcart2 {
+    color: #632d19;
+    margin-left: 16.8rem;
+    margin-top: -5.8rem;
+    padding-right: 4px;
+    padding-left: 10px;
+    list-style-type: none;
+    font-size: 23px;
+
+}
+
+.item_count {
+    margin-top: -1.5em;
+    margin-left: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/*-----------------index.html styling--------------------*/
+
+.pagination {
+    padding-left: 4rem;
+}
+
+.page-link {
+    margin-left: 25px;
+}
+
+.search-bar {
+    width: 100%;
+    margin-left: 7px;
+}
+
+.card-text {
+    color: green;
+    font-weight: 700;
+}
+
+.card-shop {
+    display: inline-block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    margin-left: 67px;
+    margin-right: 4rem;
+    margin-bottom: 19px;
+    margin-top: 28px;
+}
+
+/*----------------------button styling------------------------*/
+
+.btn-info,
+.btn-warning {
+    border-color: #795548;
+    margin-left: 1.7rem;
+}
+
+.btn-contactform {
+    margin-left: 0rem;
+    margin-bottom: 0.5rem;
+}
+
+.cart-button {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/*--------------------faq.html styling-----------------------*/
+
+.card-faq {
+    margin-left: auto;
+    margin-bottom: 1rem;
+}
+
+.faq-body {
+    background-color: red;
+}
+
+/*------------------detail.html styling-----------------------*/
 
 .product_text {
     text-align: center;
@@ -172,50 +151,62 @@ h2 {
     font-weight: bold;
 }
 
-.custom_class {
-    margin-bottom: 1.25em !important;
-}
-
-.login {}
-
-.logout {}
-
-#shoppingcart {
-    display: none;
-}
-
-#shoppingcart2 {
-    color: #632d19;
-    margin-left: 16.8rem;
-    margin-top: -5.8rem;
-    padding-right: 4px;
-    padding-left: 10px;
-    list-style-type: none;
-    font-size: 23px;
-
-}
+/*To hide an list dot from the webpage*/
 
 .nav-item {
     list-style-type: none;
 }
 
-.item_count {
-    margin-top: -1.5em;
-    margin-left: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-something {
-    margin-left: auto;
-}
+/*-----------------contact.html---------------------------*/
 
 .form-color {
     background-color: #152e94;
 }
 
+/*----------------footer.html styling----------------------*/
+
+.footer {
+    background-color: #E2D0BE;
+}
+
+.footer-copyright {
+    margin: auto;
+}
+
+.pt-4 {
+    width: 100%;
+    height: 22rem;
+    background-color: #E2D0BE;
+}
+
+
 /*------------------------------@media for Tablets (min-width: 768px)-----------------------------------*/
 
 @media (min-width: 768px) {
+    /*--------------Styling on all the pages-------------------*/
+    h1 {
+        font-size: 3.5rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    h5 {
+        font-size: 1.9rem;
+    }
+    h6 {
+        font-size: 1.7rem;
+    }
+    p {
+        font-size: 1.6rem;
+    }
+    .product_title {
+        font-size: 2.2rem;
+    }
+    label {
+        font-size: 1.5rem;
+    }
+
+    /*------------------navbar.html styling--------------------*/
     .navbar-light .navbar-nav .active>.nav-link {
         font-size: 1.7rem;
     }
@@ -226,10 +217,6 @@ something {
         margin-left: 20rem;
         margin-top: 1rem;
         font-size: 3rem;
-    }
-    .page-link {
-        margin-left: 10px;
-        font-size: 1.5rem;
     }
     #shoppingcart2 {
         margin-top: -8.8rem;
@@ -244,22 +231,13 @@ something {
         width: 13rem;
         height: 9rem;
     }
-    h1 {
-        font-size: 3.5rem;
-    }
-    h2 {
-        font-size: 2.5rem;
-    }
-    h5 {
-        font-size: 1.9rem;
-    }
-    h6{
-        font-size: 1.7rem;
-    }
-    p{
+    .dropdown-item {
         font-size: 1.5rem;
     }
-    .links {
+
+    /*--------------index.html styling-------------------*/
+    .page-link {
+        margin-left: 10px;
         font-size: 1.5rem;
     }
     .card-shop {
@@ -268,20 +246,14 @@ something {
     .card-text:last-child {
         font-size: 1.5rem;
     }
-    .card-link{
-        font-size:1.5rem;
+    .card-link {
+        font-size: 1.5rem;
     }
     .card-title {
         font-size: 1.7rem;
     }
     .card-body {
-    font-size: 1.4rem;
-}
-    .btn-secondary:disabled {
-        font-size: 1.5rem;
-    }
-    .form-control {
-        font-size: 2rem;
+        font-size: 1.4rem;
     }
     .search {
         font-size: 2rem;
@@ -290,15 +262,31 @@ something {
     .page-item.active .page-link {
         font-size: 1.5rem;
     }
+
+    /*--------------button disabled index.html styling-------------------*/
+    .btn-secondary:disabled {
+        font-size: 1.5rem;
+    }
+    /*other button styling*/
+    .buttons {
+        font-size: 2rem;
+    }
+    /*--------------contact.html styling-------------------*/
+    .form-control {
+        font-size: 2rem;
+    }
+
+    /*--------------footer.html styling-------------------*/
+    .links {
+        font-size: 1.5rem;
+    }
+
     .footer-copyright {
         font-size: 1.5rem;
     }
     .fab {
         font-size: 2.5rem;
         margin-top: 4rem;
-    }
-    .dropdown-item {
-        font-size: 1.5rem;
     }
 
     .table {
@@ -307,10 +295,9 @@ something {
     .page-footer {
         height: 31rem;
     }
-    .product_title{
-        font-size: 2.2rem;
-    }
-    .buttons{
-        font-size:2rem;
+
+    /*--------------ordsuccess.html styling-------------------*/
+    .succesfullpar{
+        margin-bottom: 2rem;
     }
 }
