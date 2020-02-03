@@ -184,7 +184,28 @@ h2 {
 
 @media (min-width: 768px) {
     /*--------------Styling on all the pages-------------------*/
-    
+    h6 {
+        font-size: 1.7rem;
+    }
+    h1 {
+        font-size: 3.5rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    h5 {
+        font-size: 1.9rem;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+    .product_title {
+        font-size: 2.2rem;
+    }
+    label {
+        font-size: 1.5rem;
+    }
 
     /*------------------navbar.html styling--------------------*/
     .navbar-light .navbar-nav .active>.nav-link {
@@ -285,7 +306,7 @@ h2 {
 /*media for laptop with touch screen */
 
 @media (min-width: 993px) {
-     /*--------------index.html styling-------------------*/
+    /*--------------index.html styling-------------------*/
     .card-shop {
         margin-left: 1rem;
     }
@@ -296,5 +317,22 @@ h2 {
 
     #shoppingcart {
         display: block;
+
+    }
+    .navbar-light .navbar-nav .nav-link {
+        padding-left: 5rem;
+    }
+    .page-item:last-child .page-link {
+        margin-left: 5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .cart-button {
+        margin-left: 3rem;
+    }
+
+    .fab {
+        padding-left: 1rem;
+        padding-right: 3rem;
     }
 }
