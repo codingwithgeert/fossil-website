@@ -19,13 +19,13 @@ The link to live page: [The Fossil Shop](https://the-fossil-shop.herokuapp.com/)
 
 - As a customer I want to have my items i clicked stored in a cart.
 
-- As a customer I want to see a deatailed page of the item i clicked.
+- As a customer I want to see a detailed page of the item i clicked.
 
 - As a customer I want to have a form to contact the developer of the website.
 
 #### Design
 
-The logo of the website is at the top left. Next to it are the navigation links to click to.
+The logo of the website is at the top left. Next to it are the navigation links you can interact with by clicking on them.
 On mobile devices the navigation links are inside a hamburger icon.
 When the user comes on the site it will see a carousel with pictures.
 Beneath it is the webshop name and a slogan.
@@ -33,20 +33,23 @@ In the footer are some quick links the user can click which brings them to other
 
 ### Wireframes
 
-- [Desktop Homepage](#)
-- [Desktop Edit page](#)
-- [Mobile Homepage](#)
+- [Desktop Homepage](https://i.ibb.co/0XVnd0m/Desktop-Wireframe-Home.png)
+- [Desktop Productpage](https://i.ibb.co/1XrctyT/Desktop-Wireframe-Fossils-page.png)
+- [Mobile Homepage](https://i.ibb.co/1dbq2Tx/Mobile-wireframe-Home.png)
+- [Mobile Productpage](https://i.ibb.co/G0XnRW0/Mobile-wireframe-Fossils.png)
 
 
 ## Features
 
-- <u>:</u>
+- <u>Stripe pay button:</u> A button to let the customer click on that opens up a payment window.
 - <u>Search bar:</u> Allow users to search for items in the webshop.
-- <u>Detailed page</u> A link to the detailedpage where the user can see info about the product.
-- <u>Add to Cart button<u> The user can click on this button and as an result it will be stored inside their cart.
+- <u>Detailed page:</u> A link to the detailedpage where the user can see info about the product.
+- <u>Add to Cart button:</u> The user can click on this button and as an result it will be stored inside their cart.
+- <u>Email:</u> is send to the customers email used in the payment form.
 
 ### Features Left to Implement
-- 
+- Bidding System
+- Message to be send to webshop owner by using an form.
   
 
 
@@ -103,13 +106,9 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 
 ### Automatic test:
 
-I used a unittest to test a GET function.
-This is done by the code:  self.assertIn(b'Boar', result.data)
-Where 'Boar' can be any data that is in the actual database/spotlist
-If its in the database the test passed if its not it is failed.
-
 #### Bugs
-- 
+- The form at the contac us page is not working. Instead it does show an: 
+"Your message has been sent to the user" page.(see features left to implement)
 
 ## Deployment
 This project was developed using the [AWS Cloud9 IDE](https://aws.amazon.com/cloud9/?origin=c9io), committed to git and pushed to GitHub using the built in function within cloud9.
