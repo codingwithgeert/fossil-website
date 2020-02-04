@@ -6,6 +6,7 @@
 This webpage is a ecommerce webshop. It is made with Django. Customers can buy fossils and put them in a cart.
 When they login they can see their cart history and order details.
 After paid by Stripe there is an email sent with the user with their order detail.
+
 The link to live page: [The Fossil Shop](https://the-fossil-shop.herokuapp.com/)
 
 
