@@ -5,7 +5,8 @@
 </div>
 This webpage is a ecommerce webshop. It is made with Django. Customers can buy fossils and put them in a cart.
 When they login they can see their cart history and order details.
-The link to live page: [placeholder](#)
+After paid by Stripe there is an email sent with the user with their order detail.
+The link to live page: [The Fossil Shop](https://the-fossil-shop.herokuapp.com/)
 
 
 ## UX
@@ -38,7 +39,7 @@ In the footer are some quick links the user can click which brings them to other
 
 ## Features
 
-- <u>carousel:</u> The user can slide thru the pictures by clicking on the arrows next to it.
+- <u>:</u>
 - <u>Search bar:</u> Allow users to search for items in the webshop.
 - <u>Detailed page</u> A link to the detailedpage where the user can see info about the product.
 - <u>Add to Cart button<u> The user can click on this button and as an result it will be stored inside their cart.
@@ -52,12 +53,11 @@ In the footer are some quick links the user can click which brings them to other
 
 ## Technologies Used
 
+Tools:
+
 - [Django](https://www.djangoproject.com/) 
     - The project uses **Django** as a framework.
 
-- [Bootstrap 4]()
-    - 
-    
 - HTML
     -  standard markup language for this project.
 
@@ -72,8 +72,7 @@ In the footer are some quick links the user can click which brings them to other
 - [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) 
    - for the version control.
 
-- [](https://www.mongodb.com/cloud/atlas) 
-   - the database used to have the data in the project.
+- [Postgress]()
 
 - [Imgbb](https://imgbb.com) 
    - to upload all external images.
@@ -88,6 +87,11 @@ In the footer are some quick links the user can click which brings them to other
     - for website fonts styles.
 
 - [Font Awesome]()
+
+Libraries
+
+- [Bootstrap 4](https://https://getbootstrap.com/) as a framework.
+ 
 
 
 ## Testing
