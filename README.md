@@ -72,6 +72,7 @@ In the footer are some quick links the user can click which brings them to other
 - [Stripe](https://dashboard.stripe.com/register) for the online payment option on the website.
 - [Travis](https://travis-ci.org/) testing tool
 - [Whitenoise](http://whitenoise.evans.io/en/stable/) for static files
+-[Django-widget-tweaks](https://github.com/jazzband/django-widget-tweaks) used for form tweaks. 
 
 #### Database:
 
