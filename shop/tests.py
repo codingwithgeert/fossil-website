@@ -2,20 +2,20 @@ from django.test import TestCase
 import unittest
 
 # Create your tests here.
-class YourTestClass(TestCase):
-    def setUp(self):
+#class YourTestClass(TestCase):
+#    def setUp(self):
         # Setup run before every test method.
-        pass
+#        pass
 
-    def tearDown(self):
+#    def tearDown(self):
         # Clean up run after every test method.
-        pass
+ #       pass
 
-    def test_something_that_will_pass(self):
-        self.assertFalse(False)
+  #  def test_something_that_will_pass(self):
+    #    self.assertFalse(False)
 
-    def test_something_that_will_fail(self):
-        self.assertTrue(False)
+   # def test_something_that_will_fail(self):
+     #   self.assertTrue(False)
         
-if __name__ == '__main__':
-    unittest.main()
+#if __name__ == '__main__':
+#    unittest.main()
