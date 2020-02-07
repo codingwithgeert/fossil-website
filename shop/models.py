@@ -4,7 +4,6 @@ from django.db import models
 # Category model:
 class Category(models.Model):
     title = models.CharField(max_length=250, unique=True)
-    slug = models.SlugField(max_length=250, unique=True)
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='category', blank=True)
     
@@ -18,7 +17,6 @@ class Category(models.Model):
 #Product Model:        
 class Products(models.Model):
     title = models.CharField(max_length=250, unique=True)
-    slug = models.SlugField(max_length=250, unique=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     discount_price = models.FloatField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
