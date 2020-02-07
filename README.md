@@ -251,15 +251,15 @@ STRIPE_SECRET | `Your own stripe secret key here`
 
 ## Media
 
-- 
+- The icons are from font awesome.
+- Picture used in the about us page is from: [unsplash](https://images.unsplash.com/photo-1555602015-9efbc925fc5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60)
 
 ## Code
 
-- 
 - testing code is from [Unittest](https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertIn)
 - used the udemy video Build Ecommerce Website to Master Django and Python as reference.
 - The videos from Code institute.
-- 
+- card code is from official bootstrap website.
 
 ### Acknowledgements
 
