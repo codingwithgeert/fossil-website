@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Errepulify/fossil-website.svg?branch=master)](https://travis-ci.org/Errepulify/fossil-website)
+
 <div align="center"><h1>The Fossil Shop<h1></div>
 
 <div align="center">
