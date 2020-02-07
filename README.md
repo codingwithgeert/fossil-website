@@ -1,8 +1,9 @@
-# The Fossil Shop
+<div align="center"><h1>The Fossil Shop<h1></div>
 
 <div align="center">
-<img src="#" alt="Screenshot" border="0"></a>
+<img src="https://i.ibb.co/x6SqLj1/fossilshop.png" alt="fossilshop" border="0" width=30% height=30%>
 </div>
+<br>
 This webpage is a ecommerce webshop. It is made with Django. Customers can buy fossils and put them in a cart.
 When they login they can see their cart history and order details.
 After paid by Stripe there is an email sent with the user with their order detail.
@@ -256,12 +257,14 @@ STRIPE_SECRET | `Your own stripe secret key here`
 
 ## Code
 
-- testing code is from [Unittest](https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertIn)
-- used the udemy video Build Ecommerce Website to Master Django and Python as reference.
+- Testing code is from [Unittest](https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertIn)
+- Used the udemy video Build Ecommerce Website to Master Django and Python as reference.
+- The email template sent to user is from udemy video Build Ecoommerce Webiste to Master Django and Python.
 - The videos from Code institute.
-- card code is from official bootstrap website.
+- Card code is from official bootstrap website.
 
 ### Acknowledgements
 
 - My mentor Juan Monetti who helped and explained me alot.
 - Special thanks to the tutor team of Code Institute to answer all my questions I had during this milestone project.
+- And all the other staff at Code Institute!
