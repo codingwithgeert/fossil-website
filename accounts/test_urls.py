@@ -11,7 +11,7 @@ class TestUrls(TestCase):
             url = reverse('login')
             self.assertEqual(resolve(url).func, loginView)
         
-        def test_logout_url_is_checked(self):
+        def test_logout_url_is_checked(self)
             url = reverse('logout')
             self.assertEqual(resolve(url).func, logoutView)
         
