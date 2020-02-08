@@ -1,5 +1,5 @@
 from django.test import Client, TestCase
-from accounts.forms import ContactUsForm
+
 
 
 class TestAboutView(TestCase):
