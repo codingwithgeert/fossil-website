@@ -6,7 +6,6 @@ Contact us
 {% endblock %}
 
 {% block content %}
-
 <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="col-12 col-md-8 col-lg-6 pb-5">
@@ -28,7 +27,6 @@ Contact us
                   {% render_field form.name class+="form-control" placeholder="Your Name"  %}
                 </div>
               </div>
-
               <div class="form-group">
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
@@ -37,7 +35,6 @@ Contact us
                   {% render_field form.from_email class+="form-control" placeholder="Your Email" %}
                 </div>
               </div>
-
               <div class="form-group">
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
@@ -46,7 +43,6 @@ Contact us
                   {% render_field form.subject class+="form-control" placeholder="Your Subject"  %}
                 </div>
               </div>
-
               <div class="form-group">
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
@@ -55,12 +51,9 @@ Contact us
                   {% render_field form.message rows="3" class+="form-control" placeholder="Messages"  %}
                 </div>
               </div>
-
             </div>
           </div>
-
         <button type="submit" class="btn btn-dark btn-block buttons rounded-0 py-2 mt-3">Submit</button>
-
       </form>
     </div>
   </div>
