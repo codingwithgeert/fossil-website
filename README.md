@@ -180,6 +180,15 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 6. click on this icon.
 7. a new tab opens up to the creator of this websites github.
 
+- To test buy something using the stripe button. Use the following creditcardnumber:
+
+| Card | Number          | CVC          | Date
+ --- | ---               | ---          | ---
+Visa | `4242424242424242`|`Any 3 digits`| `Any future date`
+
+For more info about this go to the [stripe documentation](https://stripe.com/docs/testing#cards)
+
+
 #### Automatic test:
 #### TestCase
 For testing the python code TestCase is used.
@@ -261,7 +270,7 @@ STRIPE_SECRET | `Your own stripe secret key here`
 
 - The icons are from font awesome.
 - Picture used in the about us page is from: [unsplash](https://images.unsplash.com/photo-1555602015-9efbc925fc5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60)
-
+- Pictures used as products in cards are from google
 ## Code
 
 - Testing code is from [Django](https://docs.djangoproject.com/en/3.0/topics/testing/tools/)
@@ -275,3 +284,5 @@ STRIPE_SECRET | `Your own stripe secret key here`
 - My mentor Juan Monetti who helped and explained me alot.
 - Special thanks to the tutor team of Code Institute to answer all my questions I had during this milestone project.
 - And all the other staff at Code Institute!
+
+- This website is build for educational purpose.
