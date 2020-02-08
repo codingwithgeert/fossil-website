@@ -1,6 +1,6 @@
 from django.test import Client, TestCase
 from accounts.forms import ContactUsForm
-from .views import about_me
+
 
 class TestAboutView(TestCase):
     def setUp(self):
