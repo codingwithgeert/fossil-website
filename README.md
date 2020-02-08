@@ -91,15 +91,11 @@ In the footer are some quick links the user can click which brings them to other
 - [Google Fonts](https://fonts.google.com/) for website fonts styles.
 - [JQuery](https://jquery.com) for DOM manipulation.
 
-
- 
-
-
 ## Testing
 
-#### Manual testing: 
+#### Manual testing:
 
-All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Explorer 
+All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Explorer.
 
 ##### 1. search on the webpage for the item you are looking for:
 
@@ -185,10 +181,18 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 7. a new tab opens up to the creator of this websites github.
 
 #### Automatic test:
+#### TestCase
+For testing the python code TestCase is used.
+
+In each of the project app the urls are being tested for the correct url name
+Test created to check the request 200 status code is possitive for the url and views.
+
 
 #### Bugs
-- The form at the contac us page is not working. Instead it does show an: 
+- The form at the contact us page is not working. Instead it does show an: 
 "Your message has been sent to the user" page.(see features left to implement)
+- Order email: After the user done their payment. It should send an email to them. But sometimes this email is not coming thru.
+I dont know if it has to do with mailgun or not. If the user want the order email. They can go to their order history and copy and paste it. Or print it out.
 
 ## Deployment
 This project was developed using the [AWS Cloud9 IDE](https://aws.amazon.com/cloud9/?origin=c9io), committed to git and pushed to GitHub using the built in function within cloud9.
@@ -260,7 +264,7 @@ STRIPE_SECRET | `Your own stripe secret key here`
 
 ## Code
 
-- Testing code is from [Unittest](https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertIn)
+- Testing code is from [Django](https://docs.djangoproject.com/en/3.0/topics/testing/tools/)
 - Used the udemy video Build Ecommerce Website to Master Django and Python as reference.
 - The email template sent to user is from udemy video Build Ecoommerce Webiste to Master Django and Python.
 - The videos from Code institute.
