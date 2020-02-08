@@ -162,7 +162,7 @@ def trashbin_product(request, product_id):
     return redirect('cart_detail')
     
 
-def thank_you(request, order_id):
+def thank_you(request, order_id ):
     """
     Shows a page when the order was succesfull
     """

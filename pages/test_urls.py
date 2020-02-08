@@ -7,6 +7,7 @@ class TestUrls(TestCase):
             url = reverse('about')
             self.assertEqual(resolve(url).func, about_me)
             
+            
         def test_faq_url_is_checked(self):
             url = reverse('faq')
             self.assertEqual(resolve(url).func, faq_page)
